@@ -63,36 +63,21 @@ function Order() {
   this.cost = 0;
 }
 
-Order.prototype.addPizza(pizza) {
+Order.prototype.addPizza = function(pizza) {
   this.selections.push(pizza);
 }
 
 Order.prototype.removePizza = function(pizza) {
   var index = this.selections.indexOf(pizza);
+  this.selections.splice(index, 1);
 }
 
-Order.prototype.getOrderTotal() {
+Order.prototype.getOrderTotal = function() {
   var total = 0;
 
-  for(i = 0; i < this.selections.length; i++) {\
+  for(i = 0; i < this.selections.length; i++) {
     total += this.selections[i].getCost();
   }
 
-  console.log(total);
   return total;
-}
-
-function buildOrder(pizza) {
-  var selections = []
-  selections.push(pizza);
-
-  return selections;
-}
-
-function calculateOrder(pizzaArray) {
-  var cost;
-
-  for(i = 0; i < pizzaArray.length; i++) {
-    cost += pizzaArray[i].getCost();
-  }
 }
