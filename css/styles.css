@@ -30,6 +30,10 @@ input {
   display: none;
 }
 
+#emptyOrder {
+  display: none;
+}
+
 .thank {
   display: none;
   text-align: center;

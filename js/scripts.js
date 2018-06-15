@@ -114,6 +114,7 @@ function getUserName() {
 function resetForms() {
   document.forms['pizzaForm'].reset();
   $("toppingsError").hide();
+  $("emptyOrder").hide();
 }
 
 $(document).ready(function() {
@@ -124,6 +125,7 @@ $(document).ready(function() {
   var crust;
 
   $("button#addPizza").click(function() {
+    $("#emptyOrder").hide();
     toppings = getSelectedToppings();
     crust = getSelectedCrust();
     pizza = new Pizza(toppings, crust);
@@ -134,7 +136,7 @@ $(document).ready(function() {
                               "<ul>" +
                               "<li>Size: " + pizza.getCrustSize().toUpperCase() + "</li>" + "<hr>" +
                               "</ul>" + "<hr>" +
-                              "<h4>Price: " + pizza.getCost() + "</h4>" +
+                              "<h4>Price: " + pizza.getCost().toFixed(2) + "</h4>" +
                               "</div>");
 
     for(i = 0; i < toppings.length; i++) {
@@ -150,22 +152,18 @@ $(document).ready(function() {
     event.preventDefault();
 
     if(order.getOrderTotal() === 0) {
-      $("#toppingsError").hide().fadeIn(1000);
+      $("#emptyOrder").hide().fadeIn(1000);
       return;
-    } else {
-      $("#toppingsError").hide();
     }
 
     if(toppings.length === 0) {
       $("#toppingsError").hide().fadeIn(1000);
       return;
-    } else {
-      $("#toppingsError").hide();
     }
 
     var total = order.getOrderTotal();
     $("#thankName").text(getUserName());
-    $("#totalCost").text("$" + total.toFixed(2))
+    $("#totalCost").text("$" + total.toFixed(2));
     $(".checkout").hide().fadeIn(1000);
     $(".thank").hide().fadeIn(1000);
     $(".orderEntry").hide();
@@ -175,6 +173,7 @@ $(document).ready(function() {
     resetForms();
     $("#orderScreen").remove();
     $(window).scrollTop(0);
+    order.selections.length = 0;
   });
 
 });
