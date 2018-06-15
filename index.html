@@ -14,7 +14,7 @@
 
     <div class="row">
       <div class="col-sm-12">
-        <div class="jumbotron">
+        <div class="jumbotron title">
           <h1>Welcome to Thad's Pizza Shop</h1>
         </div>
       </div>
@@ -23,7 +23,7 @@
 
     </div>
 
-    <div class="row">
+    <div class="row orderEntry">
       <div class="col-sm-12">
         <h3>Build Your Pizza</h3>
         <p>Select your toppings and crust size</p>
@@ -32,11 +32,12 @@
             <label for="name">Enter Your Name:</label>
             <input type="text" id="name" class="form-control" required>
           </div>
-          <div class="form-group">
+          <div class="form-group crustSize">
+            <img src="img/pizza-dough.png" alt="crust" id="pizza-crust">
             <h3>Select Crust Size</h3>
             <div class="btn-group btn-group-toggle" data-toggle="buttons">
               <label class="btn btn-secondary active">
-                <input type="radio" name="crust" id="small" autocomplete="off" value="small" checked>Small
+                <input type="radio" name="crust" id="small" autocomplete="off" value="small" checked required>Small
               </label>
               <label class="btn btn-secondary">
                 <input type="radio" name="crust" id="medium" autocomplete="off" value="medium">Medium
@@ -49,7 +50,8 @@
               </label>
             </div>
           </div>
-          <div class="form-group">
+          <div class="form-group toppingsPicks">
+            <img src="img/toppings.png" alt="toppings" id="toppingsImg">
             <h3>Select Toppings (choose atleast one)</h3>
             <div class="btn-group btn-group-toggle" data-toggle="buttons">
               <label class="btn btn-secondary">
@@ -80,11 +82,28 @@
                 <input type="checkbox" name="toppings" id="peppers" autocomplete="off" value="peppers">Peppers
               </label>
             </div>
+            <div class="alert alert-danger" role="alert" id="toppingsError">
+              You must select atleast one topping!
+            </div>
           </div>
           <button class="btn btn-success" type="submit" id="placeOrder">Submit Order</button>
-          <button class="btn btn-primary" type="button" id="addPizza">Add Another Pizza</button>
+          <button class="btn btn-primary" type="button" id="addPizza">Add Pizza</button>
           <button class="btn btn-danger" type="reset" id="startOver">Reset</button>
         </form>
+      </div>
+    </div>
+
+    <div class="row checkout">
+      <div class="col-sm-12">
+        <div class="jumbotron">
+          <h2>Your total is <span id="totalCost"></span></h2>
+        </div>
+      </div>
+    </div>
+    <div class="row thank">
+      <div class="col-sm-12">
+        <h1>Thank you for your order <span id="thankName"></span>!</h1>
+        <h4>Please come back soon..</h4>
       </div>
     </div>
 
