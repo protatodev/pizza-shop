@@ -5,7 +5,7 @@
 #### By _**Protatodev**_
 
 ## Github Pages website
-https://protatodev.github.io/beep-boop/
+https://protatodev.github.io/pizza-shop/
 
 ## Description
 
