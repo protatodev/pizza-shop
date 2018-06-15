@@ -111,6 +111,10 @@ function getUserName() {
   return name.toUpperCase();
 }
 
+function resetForms() {
+  document.forms['pizzaForm'].reset();
+}
+
 $(document).ready(function() {
   var pizza;
   var counter = 0;
@@ -124,12 +128,11 @@ $(document).ready(function() {
     pizza = new Pizza(toppings, crust);
     order.addPizza(pizza);
     counter++;
-    $(".orderStatus").append("<div class='col-sm'>" +
+    $(".orderStatus").append("<div class='col-sm' id='orderScreen'>" +
                               "<h4>" + getUserName() + "'s Pizza " + counter +"</h4>" +
                               "<ul>" +
                               "<li>Size: " + pizza.getCrustSize().toUpperCase() + "</li>" + "<hr>" +
                               "</ul>" +
-                              "<button type='button' class='btn btn-danger' id='delete'>Remove</button>" +
                               "</div>");
 
     for(i = 0; i < toppings.length; i++) {
@@ -137,6 +140,7 @@ $(document).ready(function() {
     }
 
     $(".orderStatus").hide().fadeIn(1500);
+    $("input#name").attr("disabled", "disabled");
     $(window).scrollTop(0);
   });
 
@@ -158,8 +162,10 @@ $(document).ready(function() {
     $(".orderEntry").hide();
   });
 
-  $("#delete").click(function() {
-    $(this).parent().find('div').hide();
+  $("#startOver").click(function() {
+    resetForms();
+    $("#orderScreen").remove();
+    $(window).scrollTop(0);
   });
 
 });
