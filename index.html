@@ -19,6 +19,9 @@
         </div>
       </div>
     </div>
+    <div class="row orderStatus">
+
+    </div>
 
     <div class="row">
       <div class="col-sm-12">
@@ -29,54 +32,57 @@
             <label for="name">Enter Your Name:</label>
             <input type="text" id="name" class="form-control" required>
           </div>
-          <h3>Select Toppings</h3>
-          <div class="btn-group btn-group-toggle" data-toggle="buttons">
-            <div class="form-group">
+          <div class="form-group">
+            <h3>Select Crust Size</h3>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
               <label class="btn btn-secondary active">
-                <input type="radio" name="toppings" id="pepperoni" autocomplete="off" checked>Pepperoni
+                <input type="radio" name="crust" id="small" autocomplete="off" value="small" checked>Small
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="crust" id="medium" autocomplete="off" value="medium">Medium
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="crust" id="large" autocomplete="off" value="large">Large
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="crust" id="extra-large" autocomplete="off" value="extra large">Extra Large
               </label>
             </div>
-            <div class="form-group">
+          <div class="form-group">
+            <h3>Select Toppings (choose atleast one)</h3>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
               <label class="btn btn-secondary">
-                <input type="radio" name="toppings" id="chicken" autocomplete="off">Chicken
+                <input type="checkbox" name="toppings" id="pepperoni" autocomplete="off" value="pepperoni">Pepperoni
               </label>
-            </div>
-            <div class="form-group">
               <label class="btn btn-secondary">
-                <input type="radio" name="toppings" id="salami" autocomplete="off">Salami
+                <input type="checkbox" name="toppings" id="chicken" autocomplete="off" value="chicken">Chicken
               </label>
-            </div>
-            <div class="form-group">
               <label class="btn btn-secondary">
-                <input type="radio" name="toppings" id="sausage" autocomplete="off">Sausage
+                <input type="checkbox" name="toppings" id="salami" autocomplete="off" value="salami">Salami
               </label>
-            </div>
-            <div class="form-group">
               <label class="btn btn-secondary">
-                <input type="radio" name="toppings" id="extra-cheese" autocomplete="off">Extra Cheese
+                <input type="checkbox" name="toppings" id="sausage" autocomplete="off" value="sausage">Sausage
               </label>
-            </div>
-            <div class="form-group">
               <label class="btn btn-secondary">
-                <input type="radio" name="toppings" id="spinach" autocomplete="off">Spinach
+                <input type="checkbox" name="toppings" id="extra-cheese" autocomplete="off" value="extra cheese">Extra Cheese
               </label>
-            </div>
-            <div class="form-group">
               <label class="btn btn-secondary">
-                <input type="radio" name="toppings" id="anchovies" autocomplete="off">Anchovies
+                <input type="checkbox" name="toppings" id="spinach" autocomplete="off" value="spinach">Spinach
               </label>
-            </div>
-            <div class="form-group">
               <label class="btn btn-secondary">
-                <input type="radio" name="toppings" id="olives" autocomplete="off">Olives
+                <input type="checkbox" name="toppings" id="anchovies" autocomplete="off" value="anchovies">Anchovies
               </label>
-            </div>
-            <div class="form-group">
               <label class="btn btn-secondary">
-                <input type="radio" name="toppings" id="peppers" autocomplete="off">Peppers
+                <input type="checkbox" name="toppings" id="olives" autocomplete="off" value="olives">Olives
+              </label>
+              <label class="btn btn-secondary">
+                <input type="checkbox" name="toppings" id="peppers" autocomplete="off" value="peppers">Peppers
               </label>
             </div>
           </div>
+          <button class="btn btn-success" type="submit" id="placeOrder">Submit Order</button>
+          <button class="btn btn-primary" type="button" id="addPizza">Add Another Pizza</button>
+          <button class="btn btn-danger" type="reset" id="startOver">Reset</button>
         </form>
       </div>
     </div>

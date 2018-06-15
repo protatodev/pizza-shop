@@ -81,3 +81,36 @@ Order.prototype.getOrderTotal = function() {
 
   return total;
 }
+
+function getSelectedToppings() {
+  var toppings = [];
+
+  $("input[type=checkbox]").each(function() {
+    if(this.checked) {
+      toppings.push(this.value)
+    }
+  });
+
+  return toppings;
+}
+
+function getSelectedCrust() {
+  var crust = $("input[name='crust']:checked").val();
+}
+
+$(document).ready(function() {
+  var pizza;
+  var toppings = [];
+  var crust;
+
+  $("button#addPizza").click(function() {
+    toppings = getSelectedToppings();
+    crust = getSelectedCrust();
+    pizza = new Pizza()
+    $(".orderStatus").append("<col-sm>" +
+                              "<h4>Pizza " +
+
+  )
+  });
+
+});
