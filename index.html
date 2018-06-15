@@ -5,10 +5,82 @@
   <link href="css/bootstrap.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <script src="js/jquery-3.3.1.js"></script>
+  <script src="js/bootstrap.js"></script>
   <script src="js/scripts.js"></script>
-  <title>Pizza Shop</title>
+  <title>Thad's Pizza Shop</title>
 </head>
 <body>
+  <div class="container">
 
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="jumbotron">
+          <h1>Welcome to Thad's Pizza Shop</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <h3>Build Your Pizza</h3>
+        <p>Select your toppings and crust size</p>
+        <form id="pizzaForm">
+          <div class="form-group">
+            <label for="name">Enter Your Name:</label>
+            <input type="text" id="name" class="form-control" required>
+          </div>
+          <h3>Select Toppings</h3>
+          <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <div class="form-group">
+              <label class="btn btn-secondary active">
+                <input type="radio" name="toppings" id="pepperoni" autocomplete="off" checked>Pepperoni
+              </label>
+            </div>
+            <div class="form-group">
+              <label class="btn btn-secondary">
+                <input type="radio" name="toppings" id="chicken" autocomplete="off">Chicken
+              </label>
+            </div>
+            <div class="form-group">
+              <label class="btn btn-secondary">
+                <input type="radio" name="toppings" id="salami" autocomplete="off">Salami
+              </label>
+            </div>
+            <div class="form-group">
+              <label class="btn btn-secondary">
+                <input type="radio" name="toppings" id="sausage" autocomplete="off">Sausage
+              </label>
+            </div>
+            <div class="form-group">
+              <label class="btn btn-secondary">
+                <input type="radio" name="toppings" id="extra-cheese" autocomplete="off">Extra Cheese
+              </label>
+            </div>
+            <div class="form-group">
+              <label class="btn btn-secondary">
+                <input type="radio" name="toppings" id="spinach" autocomplete="off">Spinach
+              </label>
+            </div>
+            <div class="form-group">
+              <label class="btn btn-secondary">
+                <input type="radio" name="toppings" id="anchovies" autocomplete="off">Anchovies
+              </label>
+            </div>
+            <div class="form-group">
+              <label class="btn btn-secondary">
+                <input type="radio" name="toppings" id="olives" autocomplete="off">Olives
+              </label>
+            </div>
+            <div class="form-group">
+              <label class="btn btn-secondary">
+                <input type="radio" name="toppings" id="peppers" autocomplete="off">Peppers
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
 </body>
 </html>
