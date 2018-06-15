@@ -128,7 +128,7 @@ $(document).ready(function() {
     pizza = new Pizza(toppings, crust);
     order.addPizza(pizza);
     counter++;
-    $(".orderStatus").append("<div class='col-sm' id='orderScreen'>" +
+    $(".orderStatus").append("<div class='col-sm-auto' id='orderScreen'>" +
                               "<h4>" + getUserName() + "'s Pizza " + counter +"</h4>" +
                               "<ul>" +
                               "<li>Size: " + pizza.getCrustSize().toUpperCase() + "</li>" + "<hr>" +

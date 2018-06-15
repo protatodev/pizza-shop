@@ -4,7 +4,8 @@ body {
 }
 
 .orderStatus {
-  display: none;
+  border: solid black 1px;
+  margin: auto;
 }
 
 .checkout {
@@ -53,7 +54,7 @@ body {
 .crustSize:hover {
   transition: 1s;
   background-color: #ED213A; /*#93291E*/
-  border: solid black 1px
+  border: solid black 1px;
 }
 
 .toppingsPicks {
@@ -63,5 +64,5 @@ body {
 .toppingsPicks:hover {
   transition: 1s;
   background-color: #56CCF2; /* #2F80ED*/
-  border: solid black 1px
+  border: solid black 1px;
 }
