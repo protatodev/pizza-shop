@@ -3,9 +3,22 @@ body {
   text-align: center;
 }
 
+input {
+  max-width: 10rem;
+  text-align:center;
+  display:block;
+  margin:auto;
+}
+
 .orderStatus {
-  border: solid black 1px;
   margin: auto;
+  transition: 1s;
+}
+
+.orderStatus:hover {
+  transition: 1s;
+  border: solid black 1px;
+  background-color: lightgray;
 }
 
 .checkout {
@@ -36,7 +49,8 @@ body {
 
 .orderEntry:hover {
   transition: 1s;
-  border: solid darkgray 1px;
+  border: solid black 1px;
+  background-color: #E4E5E6;
 }
 
 #pizza-crust {
@@ -53,8 +67,9 @@ body {
 
 .crustSize:hover {
   transition: 1s;
-  background-color: #ED213A; /*#93291E*/
+  background-color: #8F3737; /*#93291E*/
   border: solid black 1px;
+  color: white;
 }
 
 .toppingsPicks {
@@ -63,6 +78,7 @@ body {
 
 .toppingsPicks:hover {
   transition: 1s;
-  background-color: #56CCF2; /* #2F80ED*/
+  background-color: #8F3737; /* #2F80ED*/
   border: solid black 1px;
+  color: white;
 }

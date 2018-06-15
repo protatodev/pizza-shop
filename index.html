@@ -32,6 +32,7 @@
             <label for="name">Enter Your Name:</label>
             <input type="text" id="name" class="form-control" required>
           </div>
+          <hr>
           <div class="form-group crustSize">
             <img src="img/pizza-dough.png" alt="crust" id="pizza-crust">
             <h3>Select Crust Size</h3>
@@ -50,6 +51,7 @@
               </label>
             </div>
           </div>
+          <hr>
           <div class="form-group toppingsPicks">
             <img src="img/toppings.png" alt="toppings" id="toppingsImg">
             <h3>Select Toppings (choose atleast one)</h3>
@@ -85,7 +87,11 @@
             <div class="alert alert-danger" role="alert" id="toppingsError">
               You must select atleast one topping!
             </div>
+            <div class="alert alert-danger" role="alert" id="emptyOrder">
+              You must add a pizza first!
+            </div>
           </div>
+          <hr>
           <button class="btn btn-success" type="submit" id="placeOrder">Submit Order</button>
           <button class="btn btn-primary" type="button" id="addPizza">Add Pizza</button>
           <button class="btn btn-danger" type="button" id="startOver">Reset</button>

@@ -113,6 +113,7 @@ function getUserName() {
 
 function resetForms() {
   document.forms['pizzaForm'].reset();
+  $("toppingsError").hide();
 }
 
 $(document).ready(function() {
@@ -132,7 +133,8 @@ $(document).ready(function() {
                               "<h4>" + getUserName() + "'s Pizza " + counter +"</h4>" +
                               "<ul>" +
                               "<li>Size: " + pizza.getCrustSize().toUpperCase() + "</li>" + "<hr>" +
-                              "</ul>" +
+                              "</ul>" + "<hr>" +
+                              "<h4>Price: " + pizza.getCost() + "</h4>" +
                               "</div>");
 
     for(i = 0; i < toppings.length; i++) {
@@ -146,6 +148,13 @@ $(document).ready(function() {
 
   $("form#pizzaForm").submit(function(event) {
     event.preventDefault();
+
+    if(order.getOrderTotal() === 0) {
+      $("#toppingsError").hide().fadeIn(1000);
+      return;
+    } else {
+      $("#toppingsError").hide();
+    }
 
     if(toppings.length === 0) {
       $("#toppingsError").hide().fadeIn(1000);
