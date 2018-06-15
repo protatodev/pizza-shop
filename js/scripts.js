@@ -127,8 +127,9 @@ $(document).ready(function() {
     $(".orderStatus").append("<div class='col-sm'>" +
                               "<h4>" + getUserName() + "'s Pizza " + counter +"</h4>" +
                               "<ul>" +
-                              "<li>Size: " + pizza.getCrustSize().toUpperCase() + "</li>" +
+                              "<li>Size: " + pizza.getCrustSize().toUpperCase() + "</li>" + "<hr>" +
                               "</ul>" +
+                              "<button type='button' class='btn btn-danger' id='delete'>Remove</button>" +
                               "</div>");
 
     for(i = 0; i < toppings.length; i++) {
@@ -136,7 +137,7 @@ $(document).ready(function() {
     }
 
     $(".orderStatus").hide().fadeIn(1500);
-
+    $(window).scrollTop(0);
   });
 
   $("form#pizzaForm").submit(function(event) {
@@ -155,6 +156,10 @@ $(document).ready(function() {
     $(".checkout").hide().fadeIn(1000);
     $(".thank").hide().fadeIn(1000);
     $(".orderEntry").hide();
+  });
+
+  $("#delete").click(function() {
+    $(this).parent().find('div').hide();
   });
 
 });
