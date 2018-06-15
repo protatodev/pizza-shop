@@ -115,6 +115,7 @@ function resetForms() {
   document.forms['pizzaForm'].reset();
   $("toppingsError").hide();
   $("emptyOrder").hide();
+  $("input#name").attr("disabled", false);
 }
 
 $(document).ready(function() {
@@ -126,11 +127,20 @@ $(document).ready(function() {
 
   $("button#addPizza").click(function() {
     $("#emptyOrder").hide();
+    $("#toppingsError").hide();
+
     toppings = getSelectedToppings();
+
+    if(toppings.length === 0) {
+      $("#toppingsError").hide().fadeIn(1000);
+      return;
+    }
+
     crust = getSelectedCrust();
     pizza = new Pizza(toppings, crust);
     order.addPizza(pizza);
     counter++;
+
     $(".orderStatus").append("<div class='col-sm-auto' id='orderScreen'>" +
                               "<h4>" + getUserName() + "'s Pizza " + counter +"</h4>" +
                               "<ul>" +
@@ -153,11 +163,6 @@ $(document).ready(function() {
 
     if(order.getOrderTotal() === 0) {
       $("#emptyOrder").hide().fadeIn(1000);
-      return;
-    }
-
-    if(toppings.length === 0) {
-      $("#toppingsError").hide().fadeIn(1000);
       return;
     }
 
