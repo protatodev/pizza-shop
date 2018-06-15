@@ -100,15 +100,20 @@ function getSelectedCrust() {
 
 $(document).ready(function() {
   var pizza;
+  var counter = 0;
+  var order = new Order();
   var toppings = [];
   var crust;
 
   $("button#addPizza").click(function() {
     toppings = getSelectedToppings();
     crust = getSelectedCrust();
-    pizza = new Pizza()
+    pizza = new Pizza(toppings, crust);
+    order.addPizza(pizza);
+    counter++;
     $(".orderStatus").append("<col-sm>" +
-                              "<h4>Pizza " +
+                              "<h4>Pizza " + counter +"</h4>" +
+                              "<ul></ul>"
 
   )
   });
