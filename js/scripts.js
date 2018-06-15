@@ -26,6 +26,11 @@ Pizza.prototype.getToppings = function() {
   return this.userToppings;
 }
 
+Pizza.prototype.getCrustSize = function() {
+
+  return this.userSize;
+}
+
 Pizza.prototype.getCost = function() {
 
   return this.cost;
@@ -96,6 +101,8 @@ function getSelectedToppings() {
 
 function getSelectedCrust() {
   var crust = $("input[name='crust']:checked").val();
+
+  return crust;
 }
 
 $(document).ready(function() {
@@ -111,11 +118,19 @@ $(document).ready(function() {
     pizza = new Pizza(toppings, crust);
     order.addPizza(pizza);
     counter++;
-    $(".orderStatus").append("<col-sm>" +
+    $(".orderStatus").append("<div class='col-sm-3'>" +
                               "<h4>Pizza " + counter +"</h4>" +
-                              "<ul></ul>"
+                              "<ul>" +
+                              "<li>Size: " + pizza.getCrustSize().toUpperCase() + "<hr></li>" +
+                              "</ul>" +
+                              "</div>");
 
-  )
+    for(i = 0; i < toppings.length; i++) {
+      $("ul").last().append("<li>" + pizza.userToppings[i].toUpperCase() + "</li>");
+    }
+
+    $(".orderStatus").hide().fadeIn(1000);
+
   });
 
 });
